@@ -42,7 +42,7 @@ def first_case_dates(df):
     )
 
     ax.set(
-        title="Global Spread of COVID-19: First Recorded Case by Country",
+        title="First Recorded Case of COVID-19 by Country",
         xlabel="Date of First Confirmed Case",
         ylabel="Countries"
     )
