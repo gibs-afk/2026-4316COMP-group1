@@ -7,7 +7,7 @@ plt.style.use('_mpl-gallery')
 
 def load_full_grouped():
     base_path = os.path.dirname(__file__)
-    file_path = os.path.join(base_path, "..", "data", "full_grouped.csv")
+    file_path = os.path.join(base_path, "..","..", "data", "full_grouped.csv")
 
     try:
         df = pd.read_csv(file_path)
