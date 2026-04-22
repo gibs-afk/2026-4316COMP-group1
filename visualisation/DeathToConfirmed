@@ -1,0 +1,22 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+df = pd.read_csv('country_wise_latest.csv')
+
+
+top_ratios = df[['Country/Region', 'Deaths / 100 Cases']].sort_values(by='Deaths / 100 Cases', ascending=False).head(10)
+
+
+plt.figure(figsize=(10, 6))
+sns.barplot(x='Deaths / 100 Cases', y='Country/Region', data=top_ratios, palette='Reds_r')
+
+plt.title('Top 10 Countries by Death to Confirmed Ratio (%)', fontsize=14)
+plt.xlabel('Deaths per 100 Cases (%)', fontsize=12)
+plt.ylabel('Country/Region', fontsize=12)
+plt.tight_layout()
+
+
+plt.savefig('top_death_ratios.png')
+plt.show()
