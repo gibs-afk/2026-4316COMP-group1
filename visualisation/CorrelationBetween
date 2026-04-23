@@ -1,0 +1,31 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import matplotlib.ticker as ticker
+
+
+df = pd.read_csv('country_wise_latest.csv')
+
+
+sns.set_theme(style="whitegrid")
+
+
+plt.figure(figsize=(10, 6))
+ax = sns.regplot(x='Deaths', y='Confirmed', data=df, 
+                 scatter_kws={'alpha':0.5, 'color':'blue'}, 
+                 line_kws={'color':'red'})
+
+plt.title('Correlation between Deaths and Confirmed Cases', fontsize=14)
+plt.xlabel('Deaths', fontsize=12)
+plt.ylabel('Confirmed Cases', fontsize=12)
+
+
+ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
+ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
+
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.tight_layout()
+
+
+plt.savefig('confirmed_vs_deaths_whole_numbers.png')
+plt.show()
