@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 import numpy as np
 
-data = pd.read_csv(r"/Users/syroppers/Documents/archive/covid_19_clean_complete.csv")
+data = pd.read_csv("data/covid_19_clean_complete.csv")
 data.columns = data.columns.str.strip()
 data['Date'] = pd.to_datetime(data['Date'])
 
