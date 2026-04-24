@@ -27,7 +27,7 @@ def getHighestDay():
     return max_date, max_cases
 
 def getTop10RatioChart():
-    overall = data.groupby('Country/Region')[['Confirmed', 'Deaths']].sum()
+    overall = data.groupby('Countr7y/Region')[['Confirmed', 'Deaths']].sum()
     overall['Ratio'] = overall['Deaths'] / overall['Confirmed'].replace(0, 1)
     top10 = overall.sort_values('Ratio', ascending=False).head(10)
 

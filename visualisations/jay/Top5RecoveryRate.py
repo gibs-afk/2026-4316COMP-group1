@@ -12,7 +12,6 @@ def load_data():
 
 def plot_recovery_rate(df):
     latest = df[df['Date'] == df['Date'].max()].copy()
-
     latest = latest[latest['Confirmed'] > 0]
     latest['Recovery Rate'] = latest['Recovered'] / latest['Confirmed']
 
